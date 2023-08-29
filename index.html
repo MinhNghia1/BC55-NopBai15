@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <!-- link css  -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container pt-3">
+      <h1>Bai 1</h1>
+      <label for="monSo1">nhap diem mon dau tien :</label>
+      <input type="number" id="monSo1" placeholder="nhap mon dau tien" />
+
+      <label for="monSo2">nhap diem mon thu 2 :</label>
+      <input type="number" id="monSo2" placeholder="nhap mon thu 2" />
+
+      <label for="monSo3">nhap diem mon thu 3 :</label>
+      <input type="number" id="monSo3" placeholder="nhap mon thu 3" />
+
+      <label class="mt-2" for="khuVuc"
+        >Nhap khu vuc cua ban(A B C) (nhap x neu khong thuoc khu vuc nao)</label
+      >
+      <input type="text" id="khuVuc" />
+
+      <label for="doiTuong"
+        >Nhap tuong uu tien(D,E,F) (nhap o neu khong thuoc doi tuong nao)
+      </label>
+      <input type="text" id="doiTuong" />
+
+      <div id="thongBao"></div>
+
+      <button class="btn btn-success" id="btnDiem" onclick="tinhDiem()">
+        tinh
+      </button>
+    </div>
+
+    <div class="container mt-5">
+      <h1>Bai 2</h1>
+      <div>
+        <p>Nhap ten</p>
+        <input type="text" placeholder="nhap ten" id="tenKhach" value="" />
+        <p class="mt-5">nhap so kw da su dung</p>
+        <input type="number" placeholder="nhap so kw" id="soKw" value="" />
+
+        <button id="btnDien" class="btn btn-success">Tinh</button>
+        <div id="thongBaoDien"></div>
+      </div>
+    </div>
+
+    <div class="container py-5">
+      <h1>Bai 3</h1>
+      <div>
+        <p>Ho va Ten</p>
+        <input type="text" id="hoVaTen" placeholder="Le Van A" value="" />
+        <p class="mt-3">Tong thu nhap cua ban</p>
+        <input type="number" id="thuNhapNam" placeholder="So tien" value="" />
+        <p class="mt-3">So nguoi phu thuoc</p>
+        <input type="number" id="soNguoi" placeholder="So nguoi" value="" />
+        <button id="btnThuNhap" class="btn btn-success">Tinh</button>
+        <div id="thongBaoThuNhap"></div>
+      </div>
+
+      <table class="table mt-3">
+        <thead>
+          <tr>
+            <th>Họ và Tên</th>
+            <th>Thu Nhập</th>
+            <th>Số người phụ thuộc</th>
+            <th>Thuế phải đóng là</th>
+          </tr>
+        </thead>
+        <tbody id="tBody"></tbody>
+      </table>
+    </div>
+
+    <div class="contaiiner">
+      <h1>Bai 4</h1>
+      <div>
+        <select
+          class="form-control mb-3"
+          id="slcKhachHang"
+          onchange="doiDiabled()"
+        >
+          <option value="">---Select---</option>
+          <option id="opDoanhNghiep" value="DoanhNghiep">Doanh Nghiep</option>
+          <option id="opNhaDan" value="NhaDan">Nha Dan</option>
+        </select>
+      </div>
+      <div>
+        <label for="maKhachHang">Ma Khach Hang:</label>
+        <input type="number" id="maKhachHang" />
+        <label for="soKetNoi">So Ket Noi:</label>
+        <input type="number" id="soKetNoi" />
+        <label for="soKenhKetNoi">So Kenh cao Cap:</label>
+        <input type="number" id="soKenhKetNoi" />
+      </div>
+      <button class="btn btn-success" id="tinhCap" onclick="tinhTienCap()">
+        Tinh
+      </button>
+      <div id="thongBaoCap"></div>
+    </div>
+    <div class="container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Ma Khach Hang</th>
+            <th>Loai Khach Hang</th>
+            <th>Tong tien</th>
+          </tr>
+        </thead>
+        <tbody id="tBody1"></tbody>
+      </table>
+    </div>
+
+    <script src="./index.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

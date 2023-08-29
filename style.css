@@ -1,0 +1,24 @@
+.btn-success{
+    display: block;
+    margin-top: 30px;
+}
+#khuVuc{
+    display: block;
+}
+
+#doiTuong{
+    display: block;
+}
+.contaiiner{
+    margin-left: 200px;
+    margin-right: 1000px;
+}
+#maKhachHang{
+    margin-left: 6px;
+}
+#soKetNoi{
+    margin-left: 43px;
+}
+#soKenhKetNoi{
+    margin-left: 3px;
+}
